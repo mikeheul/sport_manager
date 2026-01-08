@@ -1,4 +1,4 @@
-GET_CLASSEMENT_QUERY = """
+GET_CLASSEMENT_QUERY : str = """
 SELECT 
     e.nom_equipe,  -- Nom de l'équipe
     COUNT(r.id_rencontre) AS matchs,  -- Nombre de matchs joués

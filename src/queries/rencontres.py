@@ -1,4 +1,4 @@
-GET_RENCONTRES_QUERY = """
+GET_RENCONTRES_QUERY : str = """
 SELECT 
     r.id_rencontre,                         -- ID unique de la rencontre
     e1.nom_equipe AS equipe_domicile,       -- Nom de l'équipe à domicile
