@@ -5,16 +5,12 @@ import mysql.connector  # Pour se connecter et interroger une base MySQL
 import pandas as pd      # Pour manipuler les données sous forme de DataFrame
 from rich.console import Console  # Pour afficher du texte et des tableaux stylés dans le terminal
 from rich.table import Table      # Pour créer et styliser des tableaux
+from db import get_connection
 
 # -------------------------------
 # CONNEXION À LA BASE DE DONNÉES MYSQL
 # -------------------------------
-conn = mysql.connector.connect(
-    host="localhost",   # Adresse du serveur MySQL
-    user="root",        # Nom d'utilisateur
-    password="",        # Mot de passe
-    database="sport_manager"  # Base de données à utiliser
-)
+conn = get_connection()
 
 # -------------------------------
 # REQUÊTE SQL POUR RÉCUPÉRER LE CLASSEMENT DE LA LIGUE 1 2025-2026
