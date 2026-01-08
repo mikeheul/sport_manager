@@ -2,7 +2,8 @@ import pandas as pd
 from db.connection import get_connection
 from queries.rencontres import GET_RENCONTRES_QUERY
 
-def fetch_rencontres():
+def fetch_rencontres() -> pd.DataFrame:
+    """Récupère les rencontres sous forme de DataFrame."""
     conn = get_connection()
     df = pd.read_sql(GET_RENCONTRES_QUERY, conn)
     conn.close()
