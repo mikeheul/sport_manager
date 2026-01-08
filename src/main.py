@@ -2,11 +2,15 @@ from rich.console import Console
 from rich.prompt import Prompt
 from rich.panel import Panel
 
+from rich.spinner import Spinner
+from rich.live import Live 
+
 from services.service_classement import fetch_classement
 from services.service_rencontres import fetch_rencontres
 from views.view_classement import display_classement
 from views.view_rencontres import display_rencontres
 
+import time
 
 console = Console()
 
@@ -35,11 +39,15 @@ def main():
         console.clear()
 
         if choice == "1":
-            df = fetch_classement()
+            with console.status("[bold green]Chargement du classement..."):
+                time.sleep(1.5)  
+                df = fetch_classement()
             display_classement(df)
 
         elif choice == "2":
-            df = fetch_rencontres()
+            with console.status("[bold green]Chargement des rencontres..."):
+                time.sleep(1.5)  
+                df = fetch_rencontres()
             display_rencontres(df)
 
         elif choice == "0":
