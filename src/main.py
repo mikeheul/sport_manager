@@ -9,6 +9,7 @@ from services.classement import fetch_classement
 from services.rencontres import fetch_rencontres
 from views.classement import display_classement
 from views.rencontres import display_rencontres
+from views.graphique import display_graphique
 
 import time
 
@@ -21,6 +22,7 @@ def show_menu():
             "[bold cyan]Sport Manager[/bold cyan]\n\n"
             "1️⃣  Afficher le classement\n"
             "2️⃣  Afficher les rencontres\n"
+            "3️⃣  Afficher le graphique du classement\n"
             "0️⃣  Quitter",
             title="Menu principal"
         )
@@ -32,7 +34,7 @@ def main():
         show_menu()
         choice = Prompt.ask(
             "Votre choix",
-            choices=["1", "2", "0"],
+            choices=["1", "2", "3", "0"],
             default="0"
         )
 
@@ -51,6 +53,12 @@ def main():
                 time.sleep(1.5)  
                 df = fetch_rencontres()
                 display_rencontres(df)
+        
+        elif choice == "3":
+            with console.status("[bold green]Chargement du graphique...", spinner="dots"):
+                time.sleep(1.5)
+                df = fetch_classement()
+                display_graphique(df)
 
         elif choice == "0":
             console.print("\n👋 Au revoir !", style="bold green")
