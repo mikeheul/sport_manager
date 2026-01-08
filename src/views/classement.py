@@ -1,8 +1,9 @@
 from rich.console import Console
 from rich.table import Table
+import pandas as pd
 
-
-def display_classement(df):
+def display_classement(df: pd.DataFrame) -> None:
+    """Affiche le classement sous forme de table formatée avec Rich."""
     console = Console()
     table = Table(title="🏆 Classement Ligue 1 — Saison 2025-2026")
 

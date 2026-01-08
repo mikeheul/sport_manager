@@ -1,8 +1,8 @@
 from rich.console import Console
 from rich.table import Table
+import pandas as pd
 
-
-def display_rencontres(df):
+def display_rencontres(df: pd.DataFrame):
     console = Console()  # Crée un objet console pour afficher le tableau stylé
 
     # Création du tableau avec un titre et des lignes séparées
