@@ -1,5 +1,5 @@
 import pandas as pd
-from db import get_connection
+from db.connection import get_connection
 from queries.rencontres import GET_RENCONTRES_QUERY
 
 def fetch_rencontres():

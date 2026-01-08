@@ -1,5 +1,5 @@
 import pandas as pd
-from db import get_connection
+from db.connection import get_connection
 from queries.classement import GET_CLASSEMENT_QUERY
 
 def fetch_classement():
