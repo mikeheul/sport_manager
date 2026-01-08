@@ -1,5 +1,5 @@
-from services.service_classement import fetch_classement
-from views.view_classement import display_classement
+from services.classement import fetch_classement
+from views.classement import display_classement
 
 
 def main():

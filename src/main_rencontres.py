@@ -1,5 +1,5 @@
-from services.service_rencontres import fetch_rencontres
-from views.view_rencontres import display_rencontres
+from services.rencontres import fetch_rencontres
+from views.rencontres import display_rencontres
 
 
 def main():

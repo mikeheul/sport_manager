@@ -5,10 +5,10 @@ from rich.panel import Panel
 from rich.spinner import Spinner
 from rich.live import Live 
 
-from services.service_classement import fetch_classement
-from services.service_rencontres import fetch_rencontres
-from views.view_classement import display_classement
-from views.view_rencontres import display_rencontres
+from services.classement import fetch_classement
+from services.rencontres import fetch_rencontres
+from views.classement import display_classement
+from views.rencontres import display_rencontres
 
 import time
 
@@ -38,14 +38,16 @@ def main():
 
         console.clear()
 
+        # Spinners : dots, line, bouncingBall, earth, moon
+
         if choice == "1":
-            with console.status("[bold green]Chargement du classement..."):
+            with console.status("[bold green]Chargement du classement...", spinner="dots"):
                 time.sleep(1.5)  
                 df = fetch_classement()
                 display_classement(df)
 
         elif choice == "2":
-            with console.status("[bold green]Chargement des rencontres..."):
+            with console.status("[bold green]Chargement des rencontres...", spinner="dots"):
                 time.sleep(1.5)  
                 df = fetch_rencontres()
                 display_rencontres(df)

@@ -1,6 +1,6 @@
 import pandas as pd
 from db import get_connection
-from queries.query_classement import GET_CLASSEMENT_QUERY
+from queries.classement import GET_CLASSEMENT_QUERY
 
 def fetch_classement():
     conn = get_connection()
