@@ -42,13 +42,13 @@ def main():
             with console.status("[bold green]Chargement du classement..."):
                 time.sleep(1.5)  
                 df = fetch_classement()
-            display_classement(df)
+                display_classement(df)
 
         elif choice == "2":
             with console.status("[bold green]Chargement des rencontres..."):
                 time.sleep(1.5)  
                 df = fetch_rencontres()
-            display_rencontres(df)
+                display_rencontres(df)
 
         elif choice == "0":
             console.print("\n👋 Au revoir !", style="bold green")
